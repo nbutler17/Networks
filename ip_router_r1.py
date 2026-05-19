@@ -8,6 +8,9 @@ import sys
 from pathlib import Path
 
 
+EXAMPLE_DIR = Path("extra_examples")
+
+
 # The subnet mask
 MASK = [255, 186, 170, 85]
 
@@ -527,6 +530,22 @@ def default_output_file(input_file):
     return str(input_path.with_name(input_path.stem + "_output" + suffix))
 
 
+def resolve_input_file(input_file):
+    # First try the file name exactly as typed.
+    # If it is not found, try the same name inside extra_examples.
+    input_path = Path(input_file)
+
+    if input_path.exists() or input_path.parent != Path("."):
+        return str(input_path)
+
+    example_path = EXAMPLE_DIR / input_path
+
+    if example_path.exists():
+        return str(example_path)
+
+    return str(input_path)
+
+
 if __name__ == "__main__":
     # With no arguments, use the filenames commonly used for the assignment.
     # With one argument, make an output file name from the input file name.
@@ -534,9 +553,10 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         process("input.txt", "output.txt")
     elif len(sys.argv) == 2:
-        process(sys.argv[1], default_output_file(sys.argv[1]))
+        input_file = resolve_input_file(sys.argv[1])
+        process(input_file, default_output_file(input_file))
     elif len(sys.argv) == 3:
-        process(sys.argv[1], sys.argv[2])
+        process(resolve_input_file(sys.argv[1]), sys.argv[2])
     else:
         print("Usage: python ip_router_r1.py [input.txt] [output.txt]")
         sys.exit(1)

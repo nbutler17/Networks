@@ -18,6 +18,7 @@ If an error is found, the program writes the appropriate error message instead o
 - `ip_router_r1.py` - main Python program
 - `input.txt` - default input file
 - `output.txt` - default output file created by the program
+- `extra_examples/` - additional input examples and their output files
 
 Each input file should contain only one datagram.
 
@@ -50,6 +51,56 @@ python ip_router_r1.py
 ```
 
 This reads `input.txt` and writes `output.txt`.
+
+Run with a different input file:
+
+```bash
+python ip_router_r1.py input_example.txt
+```
+
+This creates an output file named `input_example_output.txt`. If the input file is not in the main project folder, the program will also check inside `extra_examples/`.
+
+For example:
+
+```bash
+python ip_router_r1.py input_record_route.txt
+```
+
+This reads:
+
+```text
+extra_examples/input_record_route.txt
+```
+
+and writes:
+
+```text
+extra_examples/input_record_route_output.txt
+```
+
+Run with a specific input and output file:
+
+```bash
+python ip_router_r1.py input_example.txt output_example.txt
+```
+
+## Extra Examples
+
+The `extra_examples/` folder contains:
+
+```text
+input_record_route.txt
+input_strict_source_route.txt
+input_unknown_source.txt
+input_discard.txt
+input_no_fragment.txt
+```
+
+Then run one at a time:
+
+```bash
+python ip_router_r1.py input_record_route.txt
+```
 
 ## Notes
 
