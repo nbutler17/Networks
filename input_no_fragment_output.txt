@@ -1,0 +1,6 @@
+1st fragm: VERS=4, HLEN=5, SERVICE=0, Tot.length=120
+Identif.=29, Flag=0, Fragm Offset=0
+TTL=6, Protocol=TCP, Checksum=0
+Source Address: 110.49.33.76
+Destin. Address: 110.32.33.88
+Data Field: 100 bytes
