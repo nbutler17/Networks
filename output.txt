@@ -1,0 +1,15 @@
+1st fragm: VERS=4, HLEN=7, SERVICE=0, Tot.length=252
+Identif.=25, Flag=1, Fragm Offset=0
+TTL=6, Protocol=TCP, Checksum=0
+Source Address: 110.49.33.76
+Destin. Address: 110.32.33.88
+Option=7 (Record route) Opt.length=7, Pointer=8
+Opt. IP: 110.33.32.80
+Data Field: 224 bytes
+
+2nd fragm: VERS=4, HLEN=5, SERVICE=0, Tot.length=220
+Identif.=25, Flag=0, Fragm Offset=28
+TTL=6, Protocol=TCP, Checksum=0
+Source Address: 110.49.33.76
+Destin. Address: 110.32.33.88
+Data Field: 200 bytes
