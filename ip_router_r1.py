@@ -54,7 +54,7 @@ def apply_mask(ip):
 
 
 def bits_to_int(bits):
-    # Converts a binary string like "00000110" into a decimal number.
+    # Converts a binary string into a decimal number.
     return int(bits, 2) if bits else 0
 
 
@@ -65,7 +65,7 @@ def bits_to_ip(bits):
 
 def parse_input(filename):
     # Reads the input file.
-    # The last line is assumed to be the size of the data field.
+    # The last line is the size of the data field.
     # All previous lines are assumed to be binary header bits.
     with open(filename, "r") as f:
         lines = [line.strip() for line in f if line.strip()]
@@ -86,7 +86,7 @@ def parse_input(filename):
 
 
 def parse_header(bits):
-    # Parses the IPv4 header according to the format from the assignment.
+    # Parses the IPv4 header.
     # The minimum IPv4 header is 20 bytes = 160 bits.
     if len(bits) < 160:
         raise ValueError("Error: malformed header")
