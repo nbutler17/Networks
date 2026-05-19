@@ -5,7 +5,6 @@
 #   2. prints an error message.
 
 import sys
-import math
 
 
 # The subnet mask
@@ -225,20 +224,6 @@ def source_known(src):
 def destination_known(dest):
     # Returns True if the destination address belongs to a known network.
     return find_route(dest) is not None
-
-
-def packet_arrived_at_r1(src):
-    # Determines whether this packet should be handled by R1.
-    # If the source network maps to one of R1's connected interfaces,
-    # then R1 is the correct router to process it.
-    src_route = find_route(src)
-
-    if not src_route:
-        return False
-
-    incoming_interface = src_route[3]
-
-    return incoming_interface in R1_IPS
 
 
 def packet_should_be_handled_by_another_router(src, dest):
