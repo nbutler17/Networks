@@ -51,40 +51,6 @@ python ip_router_r1.py
 
 This reads `input.txt` and writes `output.txt`.
 
-Run with a different input file:
-
-```bash
-python ip_router_r1.py input_example.txt
-```
-
-This creates an output file named `input_example_output.txt`.
-
-Run with a specific input and output file:
-
-```bash
-python ip_router_r1.py input_example.txt output_example.txt
-```
-
-## Extra Test Inputs
-
-For additional examples, make separate input files instead of adding multiple datagrams to `input.txt`. The assignment states that each input file contains only one datagram.
-
-Good examples:
-
-```text
-input_record_route.txt
-input_strict_source_route.txt
-input_unknown_source.txt
-input_discard.txt
-input_no_fragment.txt
-```
-
-Then run one at a time:
-
-```bash
-python ip_router_r1.py input_record_route.txt
-```
-
 ## Notes
 
 - The checksum output is always `0`, as allowed by the assignment.
